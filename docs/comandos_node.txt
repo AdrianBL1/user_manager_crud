@@ -1,0 +1,28 @@
+(1)
+Iniciar el package.json desde la terminal de Visual Studio o una terminal del S. O.
+
+	npm init --y
+
+(2) 
+En el archivo package.json creado en el paso anterior, hay que indicar que trabajaremos con module para poder utilizar import y export con las librerías (generalmente se fija este valor después de la entrada main).
+
+	"type": "module" 
+
+(3)
+Instalar la dependencia nodemon para activar el demonio que se encarga de autocargar nuestro desarrollo.
+
+	npm i -E -D nodemon
+
+(4) 
+En el archivo packcage.json crear una entrada script para no tener que invocar nodemon a cada rato (generalmente el archivo packcage.json ya tiene una entrada scripts y allí entonces se fija la siguiente entrada. Si no es el caso, habría que agregar, después de la entrada type un apartado scripts:)
+    
+	"dev": "nodemon ./https.js"
+
+  	"scripts": {
+    		"dev": "nodemon ./index.js"
+  	},
+
+(5)
+Para poner en marcha el script que acabamos de crear. En la terminal, ejecutar el siguiente comando
+
+    	npm run dev
